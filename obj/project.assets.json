@@ -1705,11 +1705,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "Z:\\2025\\Programacion\\TP07\\TP07.csproj",
+      "projectUniqueName": "C:\\Users\\49123639\\TP07\\TP07.csproj",
       "projectName": "TP07",
-      "projectPath": "Z:\\2025\\Programacion\\TP07\\TP07.csproj",
+      "projectPath": "C:\\Users\\49123639\\TP07\\TP07.csproj",
       "packagesPath": "C:\\Users\\49123639\\.nuget\\packages\\",
-      "outputPath": "Z:\\2025\\Programacion\\TP07\\obj\\",
+      "outputPath": "C:\\Users\\49123639\\TP07\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

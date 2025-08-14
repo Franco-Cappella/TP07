@@ -22,11 +22,11 @@ public static class BD
     public static bool Esta(string Nombre)
     {
         bool esta = false;
-        Usuario usuario;
+        Usuario usuario = new Usuario();
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
             string query = "SELECT * FROM Integrantes WHERE username = @Nombre";
-            usuario = connection.QueryFirstOrDefault<Usuario>(query, new { username = Nombre });
+            usuario = connection.QueryFirstOrDefault<Usuario>(query, new { @Nombre = Nombre });
         }
         if (usuario != null) { esta = true; }
         return esta;
@@ -70,5 +70,34 @@ public static class BD
             connection.Execute(query, new { ID = idTarea});
         }
     }
+    public static Tarea TraerTarea(int idTarea){
+        
+        Tarea Tarea = new Tarea();
+        using (SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            string query = "SELECT * FROM Tareas WHERE id = @idT";
+            Tarea = connection.QueryFirstOrDefault<Tarea>(query, new { idT = idTarea });
+        }
+        return Tarea;
+    
 
-}
+    }
+    public static void ActualizarTarea(int idTarea){
+
+        using (SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            string query = "UPDATE Tareas SET finalizada = true WHERE id = @ID";
+            connection.Execute(query, new { ID = idTarea});
+        }
+    }
+
+
+    public static void ActualizarLogin(int IDusu){
+
+        using (SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            string query = "UPDATE Usuario SET ultimologin = GETDATE() WHERE id = @id";
+            connection.Execute(query, new { id = IDusu});
+        }
+    }
+}   

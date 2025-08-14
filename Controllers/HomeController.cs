@@ -15,6 +15,17 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        return View();
+        return RedirectToAction("Login1", "Account");
     }
+
+    public IActionResult CargarTareas(){
+        Usuario Usu = new Usuario();
+        ViewBag.Tareas = BD.TraerTarea(Usu.id);
+        return View("Tareas");
+    }
+
+    public IActionResult CrearTarea(){
+        
+    }
+
 }

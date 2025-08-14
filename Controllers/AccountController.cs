@@ -12,22 +12,33 @@ public class AccountController : Controller
     {
         _logger = logger;
     }
-
-    public IActionResult Index(string username, string password)
+    
+    [HttpPost]
+    public IActionResult Login(string username, string password)
     {
         Usuario user = BD.Login(username, password);
-        if (user == null){ViewBag.msjError = "El usuario no esta guardado en nuestra base de datos. Por favor Registrese.";}
-        else{HttpContext.Session.SetString("id", user.id.ToString());}
-        return View();
+        if (user == null) { ViewBag.msjError = "El usuario no esta guardado en nuestra base de datos. Por favor Registrese."; }
+        else {HttpContext.Session.SetString("id", user.id.ToString());}
+        RedirectToAction("CargarTareas");
     }
 
+    public IActionResult Login1()
+    {
+        return View("Login");
+    }
+
+    [HttpPost]
     public IActionResult Registro(string username, string password, string nombre, string apellido, string foto)
     {
         bool siNo = false;
-        bool esta = BD.Esta(username);    
-        if (!esta){siNo = BD.Registrarse(username, password, nombre, apellido, foto);}
+        bool esta = BD.Esta(username);
+        if (!esta) { siNo = BD.Registrarse(username, password, nombre, apellido, foto); }
         else ViewBag.MsjError = "Ya existe el username";
-        if (!siNo){ViewBag.MsjError = "No se pudo registrar el nuevo usuario, intentelo nuevamente";}
+        if (!siNo) { ViewBag.MsjError = "No se pudo registrar el nuevo usuario, intentelo nuevamente"; }
         return View();
+    }
+    public IActionResult Registro1()
+    {
+        return View("Registro");
     }
 }
