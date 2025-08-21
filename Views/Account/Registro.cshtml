@@ -1,0 +1,13 @@
+@{
+    ViewData["Title"] = "Registro";
+}
+<form action='@Url.Action("Registro", "home")' method="POST" enctype="multipart/form-data">
+        Ingresa tu username : <input type="nombre" name="username">
+        Ingresa tu contraseña : <input type="password" name="password">
+        Ingresa tu nombre : <input type="nombre" name="nombre">
+        Ingresa tu apellido : <input type="nombre" name="apellido">
+        Ingresa el link a tu foto : <input type="nombre" name="foto">
+
+
+        <input type="submit" name="enviar">
+    </form>

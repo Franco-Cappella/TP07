@@ -63,11 +63,6 @@ C:\Users\49123639\TP07\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Diagnosti
 C:\Users\49123639\TP07\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
 C:\Users\49123639\TP07\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\49123639\TP07\obj\Debug\net8.0\staticwebassets.development.json
-C:\Users\49123639\TP07\obj\Debug\net8.0\staticwebassets\msbuild.TP07.Microsoft.AspNetCore.StaticWebAssets.props
-C:\Users\49123639\TP07\obj\Debug\net8.0\staticwebassets\msbuild.build.TP07.props
-C:\Users\49123639\TP07\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.TP07.props
-C:\Users\49123639\TP07\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.TP07.props
-C:\Users\49123639\TP07\obj\Debug\net8.0\staticwebassets.pack.json
 C:\Users\49123639\TP07\obj\Debug\net8.0\scopedcss\bundle\TP07.styles.css
 C:\Users\49123639\TP07\obj\Debug\net8.0\TP07.csproj.Up2Date
 C:\Users\49123639\TP07\obj\Debug\net8.0\TP07.dll
@@ -75,3 +70,10 @@ C:\Users\49123639\TP07\obj\Debug\net8.0\refint\TP07.dll
 C:\Users\49123639\TP07\obj\Debug\net8.0\TP07.pdb
 C:\Users\49123639\TP07\obj\Debug\net8.0\TP07.genruntimeconfig.cache
 C:\Users\49123639\TP07\obj\Debug\net8.0\ref\TP07.dll
+C:\Users\49123639\TP07\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Users\49123639\TP07\bin\Debug\net8.0\TP07.staticwebassets.endpoints.json
+C:\Users\49123639\TP07\obj\Debug\net8.0\rjimswa.dswa.cache.json
+C:\Users\49123639\TP07\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+C:\Users\49123639\TP07\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+C:\Users\49123639\TP07\obj\Debug\net8.0\staticwebassets.build.json.cache
+C:\Users\49123639\TP07\obj\Debug\net8.0\staticwebassets.build.endpoints.json

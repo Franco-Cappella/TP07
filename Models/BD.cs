@@ -75,7 +75,7 @@ public static class BD
         Tarea Tarea = new Tarea();
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
-            string query = "SELECT * FROM Tareas WHERE id = @idT";
+            string query = "SELECT * FROM Tareas WHERE id = @idT AND finalizada = 0";
             Tarea = connection.QueryFirstOrDefault<Tarea>(query, new { idT = idTarea });
         }
         return Tarea;
