@@ -6,7 +6,7 @@ using System.Collections.Generic;
 public static class BD
 {
     private static string _connectionString = @"Server=localhost; 
-    DataBase = TP06-prog; Integrated Security=True; TrustServerCertificate=True;";
+    DataBase = TP07; Integrated Security=True; TrustServerCertificate=True;";
 
     public static Usuario Login(string Nombre, string Contraseña)
     {
@@ -98,6 +98,14 @@ public static class BD
         {
             string query = "UPDATE Usuarioss SET ultimologin = GETDATE() WHERE id = @id";
             connection.Execute(query, new { id = IDusu});
+        }
+    }
+    public static void EditarTarea(int idTarea, string ptitulo, string pdescripcion, DateTime pfecha){
+        
+        using (SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            string query = "UPDATE Tareas SET titulo = @titulo, descripcion = @descripcion, fecha = @fecha WHERE id = @id";
+            connection.Execute(query, new { id = idTarea, titulo = ptitulo, fecha = pfecha, descripcion = pdescripcion});
         }
     }
 }   

@@ -26,28 +26,32 @@ public class HomeController : Controller
     public IActionResult CrearTarea(){
         return View("CrearTarea");
     }
+
+    [HttpPost]
     public IActionResult CrearTareaGuardar(string titulo, string descripcion, DateTime fecha){
         int idUsuario = int.Parse(HttpContext.Session.GetString("id"));
         Tarea tarea = new Tarea(idUsuario, titulo, descripcion, fecha);
-        BD.CrearTareas(tarea);
+        BD.CrearTarea(tarea);
         return View("Tareas");
     }
     public IActionResult EliminarTarea(Tarea tarea){
         int idUsuario = int.Parse(HttpContext.Session.GetString("id"));
         BD.EliminarTarea(tarea.id);
-        Tarea.Papelera.Remove(tarea);
+        tarea.Papelera.Remove(tarea);
         return View("Tareas");
     }
     public IActionResult FinalizarTarea(Tarea tarea){
         int idUsuario = int.Parse(HttpContext.Session.GetString("id"));
         tarea.finalizada = true;
         BD.ActualizarTarea(tarea.id);
-        Tarea.Papelera.Add(tarea); 
+        tarea.Papelera.Add(tarea); 
         return View("Tareas");
     }
-    public IActionResult EditarTarea(Tarea tarea){
+    public IActionResult EditarTarea(){
         return View("EditarTarea");
     }
+
+    [HttpPost]
     public IActionResult EditarTareaGuardar(Tarea tarea){
         int idUsuario = int.Parse(HttpContext.Session.GetString("id"));
         BD.EditarTarea(tarea.id);
