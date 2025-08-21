@@ -12,14 +12,31 @@ public class AccountController : Controller
     {
         _logger = logger;
     }
-    
+
     [HttpPost]
     public IActionResult Login(string username, string password)
     {
-        Usuario user = BD.Login(username, password);
-        if (user == null) { ViewBag.msjError = "El usuario no esta guardado en nuestra base de datos. Por favor Registrese."; }
-        else {HttpContext.Session.SetString("id", user.id.ToString());}
-        RedirectToAction("CargarTareas");
+        int idUsuario = int.Parse(HttpContext.Session.GetString("id"));
+        if (idUsuario != null)
+        {
+            return RedirectToAction("CargarTareas");
+        }
+        else
+        {
+            Usuario user = BD.Login(username, password);
+
+            if (user == null)
+            {
+                ViewBag.msjError = "El usuario no esta guardado en nuestra base de datos. Por favor Registrese.";
+                return View("Login");
+            }
+            else
+            {
+                HttpContext.Session.SetString("id", user.id.ToString());
+                return RedirectToAction("CargarTareas");
+            }
+        }
+
     }
 
     public IActionResult Login1()
@@ -30,12 +47,24 @@ public class AccountController : Controller
     [HttpPost]
     public IActionResult Registro(string username, string password, string nombre, string apellido, string foto)
     {
-        bool siNo = false;
-        bool esta = BD.Esta(username);
-        if (!esta) { siNo = BD.Registrarse(username, password, nombre, apellido, foto); }
-        else ViewBag.MsjError = "Ya existe el username";
-        if (!siNo) { ViewBag.MsjError = "No se pudo registrar el nuevo usuario, intentelo nuevamente"; }
-        return View();
+        int idUsuario = int.Parse(HttpContext.Session.GetString("id"));
+        if (idUsuario != null)
+        {
+            return RedirectToAction("CargarTareas");
+        }
+        else
+        {
+            
+        if (!BD.Esta(username))
+        {
+            BD.Registrarse(username, password, nombre, apellido, foto);
+        }
+        else
+        {
+            ViewBag.MsjError = "Ya existe el username";
+        }
+        return View("Login");
+        }
     }
     public IActionResult Registro1()
     {

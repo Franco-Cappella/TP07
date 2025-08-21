@@ -13,20 +13,20 @@ public static class BD
         Usuario usuario = null;
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
-            string query = "SELECT * FROM Integrantes WHERE username = @Nombre AND password = @Contraseña";
+            string query = "SELECT * FROM Usuarioss WHERE username = @Nombre AND password = @Contraseña";
             usuario = connection.QueryFirstOrDefault<Usuario>(query, new { username = Nombre, password = Contraseña });
         }
         return usuario;
     }
 
-    public static bool Esta(string Nombre)
+    public static bool Esta(string Nom)
     {
         bool esta = false;
         Usuario usuario = new Usuario();
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
-            string query = "SELECT * FROM Integrantes WHERE username = @Nombre";
-            usuario = connection.QueryFirstOrDefault<Usuario>(query, new { @Nombre = Nombre });
+            string query = "SELECT * FROM Usuarioss WHERE username = @Nombre";
+            usuario = connection.QueryFirstOrDefault<Usuario>(query, new { @Nombre = Nom });
         }
         if (usuario != null) { esta = true; }
         return esta;
@@ -49,7 +49,7 @@ public static class BD
         List<Tarea> Tareas = new List<Tarea>();
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
-            string query = "SELECT * FROM Tareas WHERE idU = @id";
+            string query = "SELECT * FROM Tareas WHERE idu = @id";
             Tareas = connection.Query<Tarea>(query, new { id = IDU }).ToList();
         }
         return Tareas;
@@ -59,14 +59,14 @@ public static class BD
     {
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
-            string query = "INSERT INTO Tareas (idU, titulo, fecha, descripcion) VALUES (@IDU, @TITULO, @FECHA, @DESCRIPCION)";
-            connection.Execute(query, new { IDU = tarea.id, TITULO = tarea.titulo, FECHA = tarea.fecha, DESCRIPCION = tarea.descripcion});
+            string query = "INSERT INTO Tareas (idu, titulo, fecha, descripcion, finalizada) VALUES (@IDU, @TITULO, @FECHA, @DESCRIPCION, @FINALIZADA)";
+            connection.Execute(query, new { IDU = tarea.idU, TITULO = tarea.titulo, FECHA = tarea.fecha, DESCRIPCION = tarea.descripcion, FINALIZADA = 0 });
         }
     }
     public static void EliminarTarea(int idTarea){
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
-            string query = "DELETE * FROM Tareas WHERE id = @ID";
+            string query = "DELETE FROM Tareas WHERE id = @ID";
             connection.Execute(query, new { ID = idTarea});
         }
     }
@@ -96,7 +96,7 @@ public static class BD
 
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
-            string query = "UPDATE Usuario SET ultimologin = GETDATE() WHERE id = @id";
+            string query = "UPDATE Usuarioss SET ultimologin = GETDATE() WHERE id = @id";
             connection.Execute(query, new { id = IDusu});
         }
     }

@@ -1,31 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\49123639\\TP07\\TP07.csproj": {}
+    "C:\\Users\\Toto\\TP07\\TP07.csproj": {}
   },
   "projects": {
-    "C:\\Users\\49123639\\TP07\\TP07.csproj": {
+    "C:\\Users\\Toto\\TP07\\TP07.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\49123639\\TP07\\TP07.csproj",
+        "projectUniqueName": "C:\\Users\\Toto\\TP07\\TP07.csproj",
         "projectName": "TP07",
-        "projectPath": "C:\\Users\\49123639\\TP07\\TP07.csproj",
-        "packagesPath": "C:\\Users\\49123639\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\49123639\\TP07\\obj\\",
+        "projectPath": "C:\\Users\\Toto\\TP07\\TP07.csproj",
+        "packagesPath": "C:\\Users\\Toto\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Toto\\TP07\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\49123639\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Toto\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -55,7 +49,7 @@
             },
             "Microsoft.Data.SqlClient": {
               "target": "Package",
-              "version": "[6.0.2, )"
+              "version": "[6.1.1, )"
             }
           },
           "imports": [
@@ -77,7 +71,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.206/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.408/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

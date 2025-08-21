@@ -19,13 +19,9 @@ public class HomeController : Controller
     }
 
     public IActionResult CargarTareas(){
-        Usuario Usu = new Usuario();
-        ViewBag.Tareas = BD.TraerTarea(Usu.id);
+        int idUsuario = int.Parse(HttpContext.Session.GetString("id"));
+        ViewBag.Tareas = BD.TraerTareas(idUsuario);
         return View("Tareas");
-    }
-
-    public IActionResult CrearTarea(){
-        
     }
 
 }
