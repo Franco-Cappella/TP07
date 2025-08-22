@@ -70,10 +70,9 @@ C:\Users\49123639\TP07\obj\Debug\net8.0\refint\TP07.dll
 C:\Users\49123639\TP07\obj\Debug\net8.0\TP07.pdb
 C:\Users\49123639\TP07\obj\Debug\net8.0\TP07.genruntimeconfig.cache
 C:\Users\49123639\TP07\obj\Debug\net8.0\ref\TP07.dll
-C:\Users\49123639\TP07\obj\Debug\net8.0\rpswa.dswa.cache.json
-C:\Users\49123639\TP07\bin\Debug\net8.0\TP07.staticwebassets.endpoints.json
-C:\Users\49123639\TP07\obj\Debug\net8.0\rjimswa.dswa.cache.json
-C:\Users\49123639\TP07\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
-C:\Users\49123639\TP07\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
-C:\Users\49123639\TP07\obj\Debug\net8.0\staticwebassets.build.json.cache
-C:\Users\49123639\TP07\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\49123639\TP07\bin\Debug\net8.0\System.Text.Json.dll
+C:\Users\49123639\TP07\obj\Debug\net8.0\staticwebassets\msbuild.TP07.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\49123639\TP07\obj\Debug\net8.0\staticwebassets\msbuild.build.TP07.props
+C:\Users\49123639\TP07\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.TP07.props
+C:\Users\49123639\TP07\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.TP07.props
+C:\Users\49123639\TP07\obj\Debug\net8.0\staticwebassets.pack.json

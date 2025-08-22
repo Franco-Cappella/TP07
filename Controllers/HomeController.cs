@@ -47,14 +47,15 @@ public class HomeController : Controller
         tarea.Papelera.Add(tarea); 
         return View("Tareas");
     }
-    public IActionResult EditarTarea(){
+    public IActionResult EditarTarea(int idTarea){
+        ViewBag.idTarea = idTarea;
         return View("EditarTarea");
     }
 
     [HttpPost]
-    public IActionResult EditarTareaGuardar(Tarea tarea){
+    public IActionResult EditarTareaGuardar(string titulo, string descripcion, DateTime fecha){
         int idUsuario = int.Parse(HttpContext.Session.GetString("id"));
-        BD.EditarTarea(tarea.id);
+        BD.EditarTarea(idUsuario, titulo, descripcion, fecha);
         return View("Tareas");
     }
     

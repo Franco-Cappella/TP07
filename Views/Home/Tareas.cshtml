@@ -6,11 +6,10 @@
     <div>
         <h3>@tarea.titulo</h3>
         <p>@tarea.descripcion</p>
+        <a href='@Url.Action("EditarTarea", "Home",new{@tarea.id})'>EDITAR</a>
     </div>
-<form action='@Url.Action("EditarTarea", "Home")' method="GET" enctype="multipart/form-data">
-            <input type="submit" value="EDITAR TAREA">
-    </form>
-<form action='@Url.Action("CrearTarea", "Home")' method="GET" enctype="multipart/form-data">
+        
+        <form action='@Url.Action("CrearTarea", "Home")' method="GET" enctype="multipart/form-data">
             <input type="submit" value="CREAR TAREA">
-    </form>
+        </form>
 }

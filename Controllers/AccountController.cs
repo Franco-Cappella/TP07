@@ -16,13 +16,17 @@ public class AccountController : Controller
     [HttpPost]
     public IActionResult Login(string username, string password)
     {
-        int idUsuario = int.Parse(HttpContext.Session.GetString("id"));
+        int idUsuario = null;
+        if(i > 0) idUsuario = int.Parse(HttpContext.Session.GetString("id"));
+        
         if (idUsuario != null)
         {
             return RedirectToAction("CargarTareas");
         }
         else
         {
+            int i = 0;
+            i++;
             Usuario user = BD.Login(username, password);
 
             if (user == null)
