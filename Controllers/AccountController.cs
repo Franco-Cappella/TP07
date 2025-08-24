@@ -16,22 +16,11 @@ public class AccountController : Controller
     [HttpPost]
     public IActionResult Login(string username, string password)
     {
-        int idUsuario = null;
-        if(i > 0) idUsuario = int.Parse(HttpContext.Session.GetString("id"));
-        
-        if (idUsuario != null)
-        {
-            return RedirectToAction("CargarTareas");
-        }
-        else
-        {
-            int i = 0;
-            i++;
             Usuario user = BD.Login(username, password);
 
             if (user == null)
             {
-                ViewBag.msjError = "El usuario no esta guardado en nuestra base de datos. Por favor Registrese.";
+                ViewBag.MsjError = "El usuario no esta guardado en nuestra base de datos. Por favor Registrese.";
                 return View("Login");
             }
             else
@@ -39,7 +28,6 @@ public class AccountController : Controller
                 HttpContext.Session.SetString("id", user.id.ToString());
                 return RedirectToAction("CargarTareas");
             }
-        }
 
     }
 
@@ -51,14 +39,6 @@ public class AccountController : Controller
     [HttpPost]
     public IActionResult Registro(string username, string password, string nombre, string apellido, string foto)
     {
-        int idUsuario = int.Parse(HttpContext.Session.GetString("id"));
-        if (idUsuario != null)
-        {
-            return RedirectToAction("CargarTareas");
-        }
-        else
-        {
-            
         if (!BD.Esta(username))
         {
             BD.Registrarse(username, password, nombre, apellido, foto);
@@ -68,7 +48,6 @@ public class AccountController : Controller
             ViewBag.MsjError = "Ya existe el username";
         }
         return View("Login");
-        }
     }
     public IActionResult Registro1()
     {

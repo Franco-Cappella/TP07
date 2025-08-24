@@ -1,6 +1,8 @@
     @{
     ViewData["Title"] = "Login";
 }
+    <h1>Login</h1>
+    <h2>Por favor ingresa tus datos</h2>
     <form action='@Url.Action("Login", "Account")' method="POST" enctype="multipart/form-data">
         Ingresa tu Nombre : <input type="nombre" name="username">
         Ingresa tu contraseña : <input type="password" name="password">
@@ -9,3 +11,4 @@
     <form action='@Url.Action("Registro1", "Account")' method="GET" enctype="multipart/form-data">
             <input type="submit" value="REGISTRARSE">
     </form>
+    <h3>ERROR: @ViewBag.MsjError</h3>
