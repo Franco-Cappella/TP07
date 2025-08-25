@@ -8,13 +8,13 @@ public static class BD
     private static string _connectionString = @"Server=localhost; 
     DataBase = TP07; Integrated Security=True; TrustServerCertificate=True;";
 
-    public static Usuario Login(string Nombre, string Contraseña)
+    public static Usuario Login(string Nombre, string Contrasenia)
     {
         Usuario usuario = null;
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
-            string query = "SELECT * FROM Usuarioss WHERE username = @Nombre AND password = @Contraseña";
-            usuario = connection.QueryFirstOrDefault<Usuario>(query, new { username = Nombre, password = Contraseña });
+            string query = "SELECT * FROM Usuarioss WHERE username = @Nombre AND password = @Contrasenia";
+            usuario = connection.QueryFirstOrDefault<Usuario>(query, new { Nombre = Nombre, Contrasenia = Contrasenia });
         }
         return usuario;
     }

@@ -1,25 +1,31 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Toto\\TP07-1\\TP07.csproj": {}
+    "C:\\Users\\48857364\\TP07\\TP07.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Toto\\TP07-1\\TP07.csproj": {
+    "C:\\Users\\48857364\\TP07\\TP07.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Toto\\TP07-1\\TP07.csproj",
+        "projectUniqueName": "C:\\Users\\48857364\\TP07\\TP07.csproj",
         "projectName": "TP07",
-        "projectPath": "C:\\Users\\Toto\\TP07-1\\TP07.csproj",
-        "packagesPath": "C:\\Users\\Toto\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Toto\\TP07-1\\obj\\",
+        "projectPath": "C:\\Users\\48857364\\TP07\\TP07.csproj",
+        "packagesPath": "C:\\Users\\48857364\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\48857364\\TP07\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Toto\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\48857364\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -47,9 +53,17 @@
               "target": "Package",
               "version": "[2.1.66, )"
             },
+            "Microsoft.AspNetCore.Session": {
+              "target": "Package",
+              "version": "[2.3.0, )"
+            },
             "Microsoft.Data.SqlClient": {
               "target": "Package",
               "version": "[6.1.1, )"
+            },
+            "NewtonSoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
             }
           },
           "imports": [
@@ -71,7 +85,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.408/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.206/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

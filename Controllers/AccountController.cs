@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using Newtonsoft.Json;
 using Microsoft.AspNetCore.Mvc;
 using TP07.Models;
 
@@ -26,7 +27,7 @@ public class AccountController : Controller
             else
             {
                 HttpContext.Session.SetString("id", user.id.ToString());
-                return RedirectToAction("CargarTareas");
+                return RedirectToAction("CargarTareas", "Home");
             }
 
     }

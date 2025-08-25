@@ -1,4 +1,6 @@
+using Newtonsoft.Json;
 public class Usuario{
+    [Json]
     public int id {get; private set;}
     public string username {get; private set;}
     public string password {get; private set;}
